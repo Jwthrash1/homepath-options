@@ -13,6 +13,7 @@ const mondayBoardId = process.env.MONDAY_BOARD_ID || "18414158813";
 const mondayGroupId = process.env.MONDAY_GROUP_ID || "";
 const mondayToken = process.env.MONDAY_API_TOKEN || "";
 const mondayColumnMap = parseColumnMap(process.env.MONDAY_COLUMN_MAP || "");
+const gaMeasurementId = process.env.GA_MEASUREMENT_ID || "";
 
 const mime = {
   ".html": "text/html; charset=utf-8",
@@ -254,6 +255,12 @@ const server = http.createServer(async (request, response) => {
   try {
     if (request.method === "POST" && request.url === "/api/leads") {
       await handleLeadRequest(request, response);
+      return;
+    }
+
+    if (request.method === "GET" && request.url === "/config.js") {
+      response.writeHead(200, { "content-type": "text/javascript; charset=utf-8" });
+      response.end(`window.HOMEPATH_CONFIG = ${JSON.stringify({ gaMeasurementId })};`);
       return;
     }
 

@@ -16,6 +16,7 @@ const debugDetails = document.querySelector("#debugDetails");
 const payloadPreview = document.querySelector("#payloadPreview");
 const copyPayload = document.querySelector("#copyPayload");
 const isLocalPreview = ["127.0.0.1", "localhost"].includes(window.location.hostname);
+const gaMeasurementId = window.HOMEPATH_CONFIG?.gaMeasurementId || "";
 
 let currentStep = 0;
 let latestPayload = null;
@@ -27,6 +28,32 @@ const partnerMap = {
   heloc: "Home equity partner",
   reverse_mortgage: "Reverse mortgage partner",
 };
+
+function loadAnalytics() {
+  if (!gaMeasurementId) return;
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", gaMeasurementId);
+}
+
+function trackLeadSubmitted(payload, monday) {
+  if (!window.gtag) return;
+  window.gtag("event", "lead_submit", {
+    event_category: "lead",
+    loan_goal: payload.intent.loan_goal,
+    lead_tier: payload.qualification.lead_tier,
+    lead_score: payload.qualification.lead_score,
+    monday_item_id: monday?.item_id || "",
+  });
+}
 
 function getFormData() {
   return Object.fromEntries(new FormData(form).entries());
@@ -213,8 +240,9 @@ form.addEventListener("submit", async (event) => {
       } else {
         resultEyebrow.textContent = "Request received";
         resultTitle.textContent = "Thanks. Your request has been received.";
-        resultSummary.textContent = "A licensed mortgage professional may contact you about the home financing option you selected.";
+        resultSummary.textContent = "A licensed mortgage professional may contact you soon to discuss the home financing option you selected. You are not obligated to apply for or accept any loan product.";
       }
+      trackLeadSubmitted(latestPayload, result.monday);
     } else {
       resultEyebrow.textContent = "Local preview";
       resultTitle.textContent = `${latestPayload.qualification.lead_tier} lead captured`;
@@ -254,3 +282,4 @@ copyPayload.addEventListener("click", async () => {
 });
 
 showStep(0);
+loadAnalytics();
