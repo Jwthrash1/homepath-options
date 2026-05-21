@@ -1,0 +1,16 @@
+{
+  "name": "homepath-options-lead-funnel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "qa": "node qa.mjs",
+    "monday:inspect": "node monday-inspect.mjs",
+    "monday:create-columns": "node monday-create-lead-columns.mjs",
+    "monday:create-board": "node monday-create-leads-board.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

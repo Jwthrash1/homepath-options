@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HomePath Funding Options</title>
+    <meta
+      name="description"
+      content="A compliant mortgage lead-generation funnel for purchase, refinance, HELOC, and reverse mortgage inquiries."
+    >
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="HomePath Funding Options">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span>HomePath Options</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#quiz">Check options</a>
+        <a href="#partners">Partner criteria</a>
+        <a href="#compliance">Compliance</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Mortgage lead capture MVP</p>
+          <h1>Find the right home financing path for your next move.</h1>
+          <p class="hero-copy">
+            Capture purchase, refinance, HELOC, and reverse mortgage interest with a guided intake that scores each lead and prepares it for licensed follow-up.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#quiz">Start the intake</a>
+            <a class="button ghost" href="#compliance">Review safeguards</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Lead funnel summary">
+        <div>
+          <strong>4</strong>
+          <span>loan intents</span>
+        </div>
+        <div>
+          <strong>90 sec</strong>
+          <span>average intake</span>
+        </div>
+        <div>
+          <strong>1:1</strong>
+          <span>partner consent ready</span>
+        </div>
+        <div>
+          <strong>CRM</strong>
+          <span>payload included</span>
+        </div>
+      </section>
+
+      <section id="quiz" class="quiz-section" aria-labelledby="quiz-title">
+        <div class="section-heading">
+          <p class="eyebrow">Lead intake</p>
+          <h2 id="quiz-title">Home financing fit check</h2>
+        </div>
+
+        <div class="funnel-shell">
+          <aside class="funnel-sidebar" aria-label="Lead quality signals">
+            <div class="score-card">
+              <span>Lead score</span>
+              <strong id="scoreValue">0</strong>
+              <meter id="scoreMeter" min="0" max="100" value="0">0</meter>
+              <p id="scoreLabel">Awaiting intake</p>
+            </div>
+            <ol class="step-list" id="stepList">
+              <li class="active">Goal</li>
+              <li>Property</li>
+              <li>Profile</li>
+              <li>Contact</li>
+            </ol>
+          </aside>
+
+          <form id="leadForm" class="lead-form" novalidate>
+            <section class="form-step active" data-step="0" aria-label="Financing goal">
+              <h3>What are you looking into?</h3>
+              <div class="choice-grid">
+                <label class="choice">
+                  <input type="radio" name="loanGoal" value="purchase" required>
+                  <span>Purchase mortgage</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="loanGoal" value="refinance" required>
+                  <span>Refinance</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="loanGoal" value="heloc" required>
+                  <span>HELOC</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="loanGoal" value="reverse_mortgage" required>
+                  <span>Reverse mortgage</span>
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Timeline</span>
+                <select name="timeline" required>
+                  <option value="">Select timeline</option>
+                  <option value="0_30">0 to 30 days</option>
+                  <option value="31_90">31 to 90 days</option>
+                  <option value="3_6">3 to 6 months</option>
+                  <option value="researching">Researching</option>
+                </select>
+              </label>
+            </section>
+
+            <section class="form-step" data-step="1" aria-label="Property information">
+              <h3>Tell us about the property.</h3>
+              <div class="field-grid">
+                <label class="field">
+                  <span>State</span>
+                  <select name="state" required>
+                    <option value="">Select state</option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>ZIP code</span>
+                  <input name="zip" inputmode="numeric" pattern="[0-9]{5}" placeholder="90210" required>
+                </label>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>Estimated property value</span>
+                  <input name="propertyValue" type="number" min="50000" step="1000" placeholder="450000" required>
+                </label>
+                <label class="field">
+                  <span>Mortgage balance</span>
+                  <input name="mortgageBalance" type="number" min="0" step="1000" placeholder="250000">
+                </label>
+              </div>
+            </section>
+
+            <section class="form-step" data-step="2" aria-label="Borrower profile">
+              <h3>Help us qualify the request.</h3>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Credit range</span>
+                  <select name="creditRange" required>
+                    <option value="">Select range</option>
+                    <option value="740_plus">740+</option>
+                    <option value="700_739">700 to 739</option>
+                    <option value="660_699">660 to 699</option>
+                    <option value="620_659">620 to 659</option>
+                    <option value="below_620">Below 620</option>
+                    <option value="unknown">Not sure</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Homeowner age</span>
+                  <input name="age" type="number" min="18" max="110" placeholder="45" required>
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Primary goal</span>
+                <select name="primaryGoal" required>
+                  <option value="">Select goal</option>
+                  <option value="lower_payment">Lower monthly payment</option>
+                  <option value="cash_out">Access cash or equity</option>
+                  <option value="buy_home">Buy a home</option>
+                  <option value="retirement_cashflow">Retirement cash flow</option>
+                  <option value="compare_options">Compare options</option>
+                </select>
+              </label>
+            </section>
+
+            <section class="form-step" data-step="3" aria-label="Contact details">
+              <h3>Where should a licensed professional follow up?</h3>
+              <div class="field-grid">
+                <label class="field">
+                  <span>First name</span>
+                  <input name="firstName" autocomplete="given-name" required>
+                </label>
+                <label class="field">
+                  <span>Last name</span>
+                  <input name="lastName" autocomplete="family-name" required>
+                </label>
+              </div>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Email</span>
+                  <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="field">
+                  <span>Phone</span>
+                  <input name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-1212" required>
+                </label>
+              </div>
+
+              <label class="consent">
+                <input name="consent" type="checkbox" required>
+                <span>
+                  I agree to be contacted by HomePath Options and its selected licensed mortgage partner about home financing options by phone, text, or email. Consent is not required to buy goods or services. Message and data rates may apply.
+                </span>
+              </label>
+            </section>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <div class="form-actions">
+              <button class="button ghost" type="button" id="backButton">Back</button>
+              <button class="button primary" type="button" id="nextButton">Next</button>
+              <button class="button primary hidden" type="submit" id="submitButton">Create lead</button>
+            </div>
+          </form>
+        </div>
+
+        <section class="result-panel hidden" id="resultPanel" aria-live="polite">
+          <div>
+            <p class="eyebrow" id="resultEyebrow">Request received</p>
+            <h2 id="resultTitle">Lead captured</h2>
+            <p id="resultSummary"></p>
+          </div>
+          <details class="debug-details hidden" id="debugDetails">
+            <summary>Local CRM response</summary>
+            <pre id="payloadPreview"></pre>
+            <button class="button ghost" type="button" id="copyPayload">Copy payload</button>
+          </details>
+        </section>
+      </section>
+
+      <section id="partners" class="content-band">
+        <div class="section-heading">
+          <p class="eyebrow">Routing</p>
+          <h2>Partner criteria</h2>
+        </div>
+        <div class="cards three">
+          <article class="card">
+            <h3>Purchase</h3>
+            <p>Route by state, timeline, purchase goal, and credit range. Prioritize 0 to 90 day buyers.</p>
+          </article>
+          <article class="card">
+            <h3>Refinance and HELOC</h3>
+            <p>Route by estimated equity, mortgage balance, cash-out intent, and urgency.</p>
+          </article>
+          <article class="card">
+            <h3>Reverse mortgage</h3>
+            <p>Route only when the homeowner age is 62 or older and the state is supported by a qualified partner.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="compliance" class="content-band compliance-band">
+        <div class="section-heading">
+          <p class="eyebrow">Safeguards</p>
+          <h2>Advertising and consent controls</h2>
+        </div>
+        <div class="compliance-grid">
+          <article>
+            <h3>No rate promises</h3>
+            <p>Do not advertise payments, rates, savings, government affiliation, or approval likelihood unless disclosures and substantiation are ready.</p>
+          </article>
+          <article>
+            <h3>Consent evidence</h3>
+            <p>Store consent language, timestamp, page URL, IP address, partner name, source campaign, and submitted answers.</p>
+          </article>
+          <article>
+            <h3>Licensed handoff</h3>
+            <p>Do not offer or negotiate loan terms in this funnel. Route qualified consumers to licensed mortgage professionals.</p>
+          </article>
+          <article>
+            <h3>Reverse mortgage care</h3>
+            <p>Use age gates, avoid benefit-style framing, and keep educational language clear and balanced.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        HomePath Options is a lead intake concept. It is not a lender and does not make credit decisions. All financing discussions must be handled by licensed mortgage professionals.
+      </p>
+      <div class="footer-links" aria-label="Legal links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="disclosures.html">Advertising Disclosures</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
