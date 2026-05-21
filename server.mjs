@@ -7,7 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 if (process.env.SKIP_DOTENV !== "1") await loadDotEnv();
 
 const port = Number(process.env.PORT || 8017);
-const host = "127.0.0.1";
+const host = process.env.RENDER ? "0.0.0.0" : "127.0.0.1";
 const mondayApiUrl = "https://api.monday.com/v2";
 const mondayBoardId = process.env.MONDAY_BOARD_ID || "18414158813";
 const mondayGroupId = process.env.MONDAY_GROUP_ID || "";
@@ -279,5 +279,6 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`HomePath Options preview: http://${host}:${port}/`);
+  const displayHost = host === "0.0.0.0" ? "127.0.0.1" : host;
+  console.log(`HomePath Options preview: http://${displayHost}:${port}/`);
 });
