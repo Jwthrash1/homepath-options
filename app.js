@@ -31,6 +31,7 @@ const partnerMap = {
 
 function loadAnalytics() {
   if (!gaMeasurementId) return;
+  if (window.gtag) return;
   const script = document.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
