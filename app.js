@@ -62,6 +62,16 @@ function trackLeadSubmitted(payload, monday) {
   if (isLocalPreview) console.info("Tracked lead_submit", eventPayload);
 }
 
+function trackLeadStarted(payload) {
+  if (!window.gtag) return;
+  window.gtag("event", "lead_submit", {
+    loan_goal: payload.intent.loan_goal,
+    lead_tier: payload.qualification.lead_tier,
+    lead_score: payload.qualification.lead_score,
+    event_stage: "submit_click",
+  });
+}
+
 function getFormData() {
   return Object.fromEntries(new FormData(form).entries());
 }
@@ -235,6 +245,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     latestPayload = buildPayload(getFormData());
+    trackLeadStarted(latestPayload);
     const result = await submitLead(latestPayload);
     latestPayload = result.payload || latestPayload;
 
