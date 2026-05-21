@@ -47,13 +47,19 @@ function loadAnalytics() {
 
 function trackLeadSubmitted(payload, monday) {
   if (!window.gtag) return;
-  window.gtag("event", "lead_submit", {
-    event_category: "lead",
+  const eventPayload = {
     loan_goal: payload.intent.loan_goal,
     lead_tier: payload.qualification.lead_tier,
     lead_score: payload.qualification.lead_score,
     monday_item_id: monday?.item_id || "",
+  };
+  window.gtag("event", "lead_submit", eventPayload);
+  window.gtag("event", "generate_lead", {
+    currency: "USD",
+    value: 1,
+    ...eventPayload,
   });
+  if (isLocalPreview) console.info("Tracked lead_submit", eventPayload);
 }
 
 function getFormData() {
