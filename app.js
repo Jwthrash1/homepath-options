@@ -142,7 +142,7 @@ function buildPayload(data) {
     consent: {
       granted: Boolean(data.consent),
       language:
-        "I agree to be contacted by HomePath Options and its selected licensed mortgage partner about home financing options by phone, text, or email. Consent is not required to buy goods or services. Message and data rates may apply.",
+        "I agree to be contacted by HomePath Options and selected licensed mortgage partners about home financing options by phone, text, or email. Consent is not required to buy goods or services. Message and data rates may apply.",
       captured_at: now.toISOString(),
       page_url: window.location.href,
     },

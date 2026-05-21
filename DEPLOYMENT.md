@@ -12,8 +12,7 @@ MONDAY_COLUMN_MAP={"lead.email":{"id":"text_mm3h4t6b","type":"text"},"lead.phone
 
 ## Before Public Traffic
 
-- Replace `HomePath Options` with the real business name.
-- Replace placeholder legal-page contact and licensing text.
+- Confirm the final business entity name and any mailing address.
 - Have mortgage compliance counsel review consent, privacy, terms, disclosures, lead-sale model, reverse mortgage copy, and state coverage.
 - Add analytics and ad conversion tracking only after privacy disclosures are updated.
 - Submit one production test lead and verify the Monday item and columns.
