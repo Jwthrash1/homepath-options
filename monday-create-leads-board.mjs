@@ -14,6 +14,7 @@ const desiredColumns = [
   { key: "qualification.property_value", title: "Property Value", type: "numbers" },
   { key: "qualification.mortgage_balance", title: "Mortgage Balance", type: "numbers" },
   { key: "consent.captured_at", title: "Consent Date", type: "date" },
+  { key: "workflow.follow_up_status", title: "Follow Up Status", type: "text" },
 ];
 
 async function loadDotEnv() {

@@ -6,6 +6,7 @@
 2. Review new items created today.
 3. Confirm each lead has:
    - Name
+   - Follow Up Status
    - Lead Email
    - Lead Phone
    - Loan Type
@@ -58,3 +59,40 @@ GA_MEASUREMENT_ID=G-XXXXXXXXXX
 - Keep `MONDAY_API_TOKEN` only in Render environment variables and the local `.env` file.
 - Have mortgage compliance counsel review all public legal pages before paid advertising.
 - Avoid rate, approval, savings, or payment claims unless counsel has reviewed the exact advertising language and disclosures.
+
+## Follow-Up Process
+
+Recommended `Follow Up Status` values:
+
+```text
+New
+Contacted
+Appointment Set
+Sent to Partner
+Not Qualified
+Closed
+```
+
+Simple workflow:
+
+1. Every new website lead starts as `New`.
+2. Call or text as soon as possible.
+3. Change to `Contacted` after the first real contact attempt.
+4. Change to `Appointment Set` when a licensed partner call is scheduled.
+5. Change to `Sent to Partner` when the lead has been routed.
+6. Change to `Not Qualified` if the lead is outside partner criteria.
+7. Change to `Closed` after the opportunity is resolved.
+
+## Monday Notification Automation
+
+Inside monday.com, open the `Mortgage Leads` board and create an automation:
+
+```text
+When an item is created, notify someone.
+```
+
+Notify yourself with a message like:
+
+```text
+New HomePath Options lead received. Review the Mortgage Leads board for contact details and follow-up status.
+```

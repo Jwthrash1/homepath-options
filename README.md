@@ -63,6 +63,12 @@ C:\Users\jwthr\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 
 This creates a new `Mortgage Leads` board, adds the lead columns, and updates `.env` so new submissions go there instead of the original contacts board.
 
+To add the follow-up workflow column to an existing Mortgage Leads board, run:
+
+```powershell
+C:\Users\jwthr\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe monday-add-follow-up-status.mjs
+```
+
 ### Local Token Setup
 
 Do not paste your monday.com token into chat.

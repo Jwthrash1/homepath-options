@@ -183,6 +183,9 @@ function buildPayload(data) {
       lead_score: score,
       lead_tier: getLeadTier(score),
     },
+    workflow: {
+      follow_up_status: "New",
+    },
     consent: {
       granted: Boolean(data.consent),
       language:
