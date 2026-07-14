@@ -127,8 +127,8 @@ nav a[aria-current="page"] {
   color: var(--copper);
 }
 
-.hero h1 {
-  color: white;
+.hero .hero-content h1 {
+  color: #fff !important;
   text-shadow: 0 2px 18px rgba(25, 35, 31, 0.32);
 }
 
