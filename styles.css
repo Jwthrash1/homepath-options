@@ -96,7 +96,18 @@ nav a[aria-current="page"] {
   inset: 0;
   z-index: -2;
   background: var(--hero-photo) center / cover;
-  filter: brightness(1.18) contrast(0.96) saturate(1.04);
+  filter: brightness(0.94) contrast(1.08) saturate(1.2);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(30, 143, 218, 0.4) 0%, rgba(30, 143, 218, 0.18) 36%, rgba(14, 34, 30, 0.22) 62%, rgba(14, 34, 30, 0.42) 100%),
+    linear-gradient(90deg, rgba(12, 32, 28, 0.62) 0%, rgba(12, 32, 28, 0.42) 42%, rgba(12, 32, 28, 0.14) 78%);
 }
 
 .hero::after {
@@ -730,7 +741,7 @@ footer p {
 
 @media (max-width: 880px) {
   .hero-media {
-    filter: brightness(1.48) contrast(0.92) saturate(1.08);
+    filter: brightness(0.96) contrast(1.08) saturate(1.22);
     background-position: 58% center;
   }
 
