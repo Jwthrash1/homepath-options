@@ -741,8 +741,14 @@ footer p {
 
 @media (max-width: 880px) {
   .hero-media {
-    filter: brightness(0.96) contrast(1.08) saturate(1.22);
+    filter: brightness(1.16) contrast(1.02) saturate(1.16);
     background-position: 58% center;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(35, 160, 232, 0.3) 0%, rgba(35, 160, 232, 0.08) 34%, rgba(14, 34, 30, 0.08) 62%, rgba(14, 34, 30, 0.28) 100%),
+      linear-gradient(90deg, rgba(12, 32, 28, 0.4) 0%, rgba(12, 32, 28, 0.28) 46%, rgba(12, 32, 28, 0.06) 82%);
   }
 
   nav {
