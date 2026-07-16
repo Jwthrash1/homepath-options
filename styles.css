@@ -757,10 +757,12 @@ footer p {
 
   .hero {
     min-height: 720px;
+    align-items: start;
   }
 
   .hero-content {
-    margin-bottom: 112px;
+    margin-top: clamp(64px, 13vh, 112px);
+    margin-bottom: 0;
   }
 
   .signal-strip,
