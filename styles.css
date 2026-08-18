@@ -877,3 +877,22 @@ footer p {
   height: 34px;
   flex: 0 0 auto;
 }
+
+.form-note {
+  margin: -6px 0 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.surefire-embed {
+  min-height: 260px;
+  padding: 18px;
+  background: #f8faf6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.surefire-embed:empty::before {
+  content: "Loading secure request form...";
+  color: var(--muted);
+}

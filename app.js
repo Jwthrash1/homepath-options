@@ -4,6 +4,7 @@ const stepItems = Array.from(document.querySelectorAll("#stepList li"));
 const backButton = document.querySelector("#backButton");
 const nextButton = document.querySelector("#nextButton");
 const submitButton = document.querySelector("#submitButton");
+const surefireEmbed = document.querySelector("#surefireEmbed");
 const formError = document.querySelector("#formError");
 const scoreValue = document.querySelector("#scoreValue");
 const scoreMeter = document.querySelector("#scoreMeter");
@@ -110,7 +111,7 @@ function calculateScore(data) {
   if (data.loanGoal === "reverse_mortgage" && asNumber(data.age) >= 62) score += 16;
   if (data.loanGoal === "reverse_mortgage" && asNumber(data.age) > 0 && asNumber(data.age) < 62) score -= 30;
 
-  if (data.email && data.phone && data.consent) score += 12;
+  if (data.email && data.phone) score += 12;
 
   return Math.max(0, Math.min(100, score));
 }
@@ -136,7 +137,8 @@ function showStep(index) {
   stepItems.forEach((item, stepIndex) => item.classList.toggle("active", stepIndex === currentStep));
   backButton.classList.toggle("hidden", currentStep === 0);
   nextButton.classList.toggle("hidden", currentStep === steps.length - 1);
-  submitButton.classList.toggle("hidden", currentStep !== steps.length - 1);
+  const shouldUseSurefireSubmit = Boolean(surefireEmbed) && currentStep === steps.length - 1;
+  submitButton.classList.toggle("hidden", currentStep !== steps.length - 1 || shouldUseSurefireSubmit);
   formError.textContent = "";
   updateScore();
 }
