@@ -852,3 +852,28 @@ footer p {
     min-height: auto;
   }
 }
+
+.footer-disclosure {
+  display: grid;
+  gap: 8px;
+  max-width: 980px;
+  margin: 0 auto 16px;
+}
+
+.footer-placeholder {
+  font-style: italic;
+}
+
+.ehl-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest);
+  font-weight: 850;
+}
+
+.ehl-mark svg {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+}

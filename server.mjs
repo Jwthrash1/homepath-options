@@ -229,6 +229,14 @@ async function createMondayLead(payload) {
 async function handleLeadRequest(request, response) {
   try {
     const payload = await readJson(request);
+    if (payload?.lead?.state && payload.lead.state !== "FL") {
+      sendJson(response, 400, {
+        ok: false,
+        error: "Only Florida inquiries can be submitted through this site."
+      });
+      return;
+    }
+
     payload.metadata = {
       ...payload.metadata,
       server_received_at: new Date().toISOString(),

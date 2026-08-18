@@ -189,7 +189,7 @@ function buildPayload(data) {
     consent: {
       granted: Boolean(data.consent),
       language:
-        "I agree to be contacted by HomePath Options and selected licensed mortgage partners about home financing options by phone, text, or email. Consent is not required to buy goods or services. Message and data rates may apply.",
+        "I agree to be contacted by Jon Thrasher with The Mortgage Firm, Inc. about mortgage options by phone, text, or email. Consent is not required to buy goods or services. Message and data rates may apply.",
       captured_at: now.toISOString(),
       page_url: window.location.href,
     },
@@ -261,7 +261,7 @@ form.addEventListener("submit", async (event) => {
       } else {
         resultEyebrow.textContent = "Request received";
         resultTitle.textContent = "Thanks. Your request has been received.";
-        resultSummary.textContent = "A licensed mortgage professional may contact you soon to discuss the home financing option you selected. You are not obligated to apply for or accept any loan product.";
+        resultSummary.textContent = "Jon Thrasher with The Mortgage Firm, Inc. may contact you soon to discuss the Florida home financing option you selected. You are not obligated to apply for or accept any loan product.";
       }
       trackLeadSubmitted(latestPayload, result.monday);
     } else {
@@ -283,7 +283,7 @@ form.addEventListener("submit", async (event) => {
     formError.textContent = error.message || "Lead submission failed. Please try again.";
   } finally {
     isSubmitting = false;
-    submitButton.textContent = "Create lead";
+    submitButton.textContent = "Submit request";
     submitButton.disabled = false;
   }
 });
