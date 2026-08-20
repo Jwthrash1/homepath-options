@@ -85,154 +85,21 @@
       <section id="quiz" class="quiz-section" aria-labelledby="quiz-title">
         <div class="section-heading">
           <p class="eyebrow">Get started</p>
-          <h2 id="quiz-title">Tell us what you are looking for.</h2>
+          <h2 id="quiz-title">Complete the secure Surefire form.</h2>
         </div>
 
-        <div class="funnel-shell">
-          <aside class="funnel-sidebar" aria-label="Lead quality signals">
-            <div class="score-card">
-              <span>Lead score</span>
-              <strong id="scoreValue">0</strong>
-              <meter id="scoreMeter" min="0" max="100" value="0">0</meter>
-              <p id="scoreLabel">Awaiting intake</p>
+        <div class="funnel-shell surefire-shell">
+          <section id="surefire-request" class="lead-form surefire-panel" aria-label="Secure Surefire request form">
+            <h3>Complete the secure Surefire form.</h3>
+            <p class="form-note">
+              The Mortgage Firm's Surefire form below handles your contact consent and sends your request directly to Jon Thrasher for follow-up.
+            </p>
+            <div class="surefire-embed" id="surefireEmbed">
+              <div class="tomn-form-embed" data-form-id="BY3mce" data-user-id="80BK1c8"></div>
             </div>
-            <ol class="step-list" id="stepList">
-              <li class="active">Goal</li>
-              <li>Property</li>
-              <li>Profile</li>
-              <li>Contact</li>
-            </ol>
-          </aside>
-
-          <form id="leadForm" class="lead-form" novalidate>
-            <section class="form-step active" data-step="0" aria-label="Financing goal">
-              <h3>What are you looking into?</h3>
-              <div class="choice-grid">
-                <label class="choice">
-                  <input type="radio" name="loanGoal" value="purchase" required>
-                  <span>Purchase mortgage</span>
-                </label>
-                <label class="choice">
-                  <input type="radio" name="loanGoal" value="refinance" required>
-                  <span>Refinance</span>
-                </label>
-                <label class="choice">
-                  <input type="radio" name="loanGoal" value="heloc" required>
-                  <span>HELOC</span>
-                </label>
-                <label class="choice">
-                  <input type="radio" name="loanGoal" value="reverse_mortgage" required>
-                  <span>Reverse mortgage</span>
-                </label>
-              </div>
-
-              <label class="field">
-                <span>Timeline</span>
-                <select name="timeline" required>
-                  <option value="">Select timeline</option>
-                  <option value="0_30">0 to 30 days</option>
-                  <option value="31_90">31 to 90 days</option>
-                  <option value="3_6">3 to 6 months</option>
-                  <option value="researching">Researching</option>
-                </select>
-              </label>
-            </section>
-
-            <section class="form-step" data-step="1" aria-label="Property information">
-              <h3>Tell us about the property.</h3>
-              <div class="field-grid">
-                <label class="field">
-                  <span>State</span>
-                  <select name="state" required>
-                    <option value="">Select state</option>
-                    <option value="FL">Florida</option>
-                  </select>
-                </label>
-                <label class="field">
-                  <span>ZIP code</span>
-                  <input name="zip" inputmode="numeric" pattern="[0-9]{5}" placeholder="90210" required>
-                </label>
-              </div>
-
-              <div class="field-grid">
-                <label class="field">
-                  <span>Estimated property value</span>
-                  <input name="propertyValue" type="number" min="50000" step="1000" placeholder="450000" required>
-                </label>
-                <label class="field">
-                  <span>Mortgage balance</span>
-                  <input name="mortgageBalance" type="number" min="0" step="1000" placeholder="250000">
-                </label>
-              </div>
-            </section>
-
-            <section class="form-step" data-step="2" aria-label="Borrower profile">
-              <h3>Help us qualify the request.</h3>
-              <div class="field-grid">
-                <label class="field">
-                  <span>Credit range</span>
-                  <select name="creditRange" required>
-                    <option value="">Select range</option>
-                    <option value="740_plus">740+</option>
-                    <option value="700_739">700 to 739</option>
-                    <option value="660_699">660 to 699</option>
-                    <option value="620_659">620 to 659</option>
-                    <option value="below_620">Below 620</option>
-                    <option value="unknown">Not sure</option>
-                  </select>
-                </label>
-                <label class="field">
-                  <span>Homeowner age</span>
-                  <input name="age" type="number" min="18" max="110" placeholder="45" required>
-                </label>
-              </div>
-
-              <label class="field">
-                <span>Primary goal</span>
-                <select name="primaryGoal" required>
-                  <option value="">Select goal</option>
-                  <option value="lower_payment">Lower monthly payment</option>
-                  <option value="cash_out">Access cash or equity</option>
-                  <option value="buy_home">Buy a home</option>
-                  <option value="retirement_cashflow">Retirement cash flow</option>
-                  <option value="compare_options">Compare options</option>
-                </select>
-              </label>
-            </section>
-
-            <section id="surefire-request" class="form-step" data-step="3" aria-label="Contact details">
-              <h3>Complete the secure Surefire form.</h3>
-              <p class="form-note">
-                The Mortgage Firm's Surefire form below handles your contact consent and sends your request directly to Jon Thrasher for follow-up.
-              </p>
-              <div class="surefire-embed" id="surefireEmbed">
-                <div class="tomn-form-embed" data-form-id="BY3mce" data-user-id="80BK1c8"></div>
-              </div>
-              <script async src="https://sf3.tomnx.com/formembed/embedform.js"></script>
-            </section>
-
-            <p class="form-error" id="formError" role="alert"></p>
-
-            <div class="form-actions">
-              <button class="button ghost" type="button" id="backButton">Back</button>
-              <button class="button primary" type="button" id="nextButton">Next</button>
-              <button class="button primary hidden" type="submit" id="submitButton">Submit request</button>
-            </div>
-          </form>
+            <script async src="https://sf3.tomnx.com/formembed/embedform.js"></script>
+          </section>
         </div>
-
-        <section class="result-panel hidden" id="resultPanel" aria-live="polite">
-          <div>
-            <p class="eyebrow" id="resultEyebrow">Request received</p>
-            <h2 id="resultTitle">Lead captured</h2>
-            <p id="resultSummary"></p>
-          </div>
-          <details class="debug-details hidden" id="debugDetails">
-            <summary>Local CRM response</summary>
-            <pre id="payloadPreview"></pre>
-            <button class="button ghost" type="button" id="copyPayload">Copy payload</button>
-          </details>
-        </section>
       </section>
 
       <section id="partners" class="content-band">
@@ -299,7 +166,5 @@
       </div>
     </footer>
 
-    <script src="config.js?v=20260521"></script>
-    <script src="app.js?v=20260521"></script>
   </body>
 </html>

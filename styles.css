@@ -896,3 +896,17 @@ footer p {
   content: "Loading secure request form...";
   color: var(--muted);
 }
+
+.surefire-shell {
+  display: block;
+  overflow: visible;
+}
+
+.surefire-panel {
+  display: block;
+  width: 100%;
+}
+
+.surefire-panel h3 {
+  margin-bottom: 8px;
+}
