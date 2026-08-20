@@ -15,6 +15,7 @@ const resultTitle = document.querySelector("#resultTitle");
 const resultSummary = document.querySelector("#resultSummary");
 const debugDetails = document.querySelector("#debugDetails");
 const payloadPreview = document.querySelector("#payloadPreview");
+const openSurefireLinks = Array.from(document.querySelectorAll("[data-open-surefire]"));
 const copyPayload = document.querySelector("#copyPayload");
 const isLocalPreview = ["127.0.0.1", "localhost"].includes(window.location.hostname);
 const gaMeasurementId = window.HOMEPATH_CONFIG?.gaMeasurementId || "";
@@ -304,5 +305,18 @@ copyPayload.addEventListener("click", async () => {
   }
 });
 
-showStep(0);
+openSurefireLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    showStep(steps.length - 1);
+    window.setTimeout(() => {
+      surefireEmbed?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  });
+});
+
+if (window.location.hash === "#surefire-request") {
+  showStep(steps.length - 1);
+} else {
+  showStep(0);
+}
 loadAnalytics();
